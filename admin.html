@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Showcase.AI</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+  <script src="data.js"></script>
+</head>
+<body>
+
+  <!-- Backgrounds -->
+  <div class="bg-blur"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <!-- Navbar -->
+  <nav class="glass-nav">
+    <div class="logo">Showcase<span class="neon-text">.AI</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">&larr; Back to Showcase</a></li>
+    </ul>
+  </nav>
+
+  <div class="admin-container">
+    <div class="glass-panel">
+      <!-- Login Section -->
+      <div id="login-section">
+        <h2 style="margin-bottom: 2rem; font-size: 2rem; text-align: center;">Admin <span class="neon-text">Access</span></h2>
+        
+        <div id="login-error" class="alert hidden">Incorrect Password!</div>
+        
+        <form id="login-form">
+          <div class="form-group">
+            <label for="password">Enter Admin Password</label>
+            <input type="password" id="password" required placeholder="••••••••••••••">
+          </div>
+          <button type="submit" class="cta-btn" style="width: 100%; border: none; cursor: pointer;">Login</button>
+        </form>
+      </div>
+
+      <!-- Dashboard Section (Hidden Initially) -->
+      <div id="dashboard-section" class="hidden">
+        <h2 style="margin-bottom: 1.5rem; text-align: center;">Add New <span class="neon-text">Website</span></h2>
+        
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; text-align: center;">
+          Because this site is hosted statically on GitHub, adding a new showcase will generate an updated configuration file that you can download or copy.
+        </p>
+
+        <form id="add-site-form">
+          <div class="form-group">
+            <label for="site-title">Website Title</label>
+            <input type="text" id="site-title" required placeholder="e.g. Acme Corp">
+          </div>
+          
+          <div class="form-group">
+            <label for="site-desc">Short Description</label>
+            <input type="text" id="site-desc" required placeholder="e.g. An elegant corporate landing page.">
+          </div>
+
+          <div class="form-group">
+            <label for="site-url">Website URL</label>
+            <input type="url" id="site-url" required placeholder="https://...">
+          </div>
+
+          <div class="form-group">
+            <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">
+              <span>Image Source:</span>
+              <label style="cursor: pointer;"><input type="radio" name="imageType" value="url" checked id="type-url"> URL</label>
+              <label style="cursor: pointer;"><input type="radio" name="imageType" value="file" id="type-file"> File Upload</label>
+            </div>
+            
+            <div id="img-url-wrapper">
+              <input type="url" id="site-image-url" placeholder="https:// images.unsplash.com/...">
+            </div>
+            <div id="img-file-wrapper" class="hidden">
+              <input type="file" id="site-image-file" accept="image/*" style="background: transparent; border: none; padding: 0.5rem 0;">
+            </div>
+          </div>
+
+          <button type="submit" class="cta-btn" style="width: 100%; border: none; cursor: pointer; margin-bottom: 1rem;">Generate Site Data</button>
+        </form>
+
+        <!-- Result Section -->
+        <div id="result-section" class="hidden" style="margin-top: 2rem; border-top: 1px solid var(--glass-border); padding-top: 2rem;">
+          <div class="alert alert-success">Successfully added to temp memory!</div>
+          <label>Updated `data.js` script:</label>
+          <textarea id="output-code" class="code-output" readonly></textarea>
+          
+          <div style="display: flex; gap: 1rem;">
+            <button id="copy-btn" class="cta-btn" style="padding: 0.8rem 1.5rem; flex: 1; border: none; background: var(--glass-bg); font-size: 0.9rem; cursor: pointer;">Copy Code</button>
+            <button id="download-btn" class="cta-btn" style="padding: 0.8rem 1.5rem; flex: 1; border: none; background: var(--primary); font-size: 0.9rem; cursor: pointer;">Download data.js</button>
+          </div>
+          
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; text-align: center;">
+            Replace your existing <code>data.js</code> file with this, then commit/push to GitHub to update your live site!
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

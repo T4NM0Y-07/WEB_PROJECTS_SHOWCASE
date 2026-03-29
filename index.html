@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Showcase</title>
+  <meta name="description" content="A curated showcase of premium, cutting-edge websites.">
+
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Dynamic Animated Background -->
+  <div class="bg-blur"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <!-- Navbar -->
+  <nav class="glass-nav">
+    <div class="logo">Showcase<span class="neon-text">.AI</span></div>
+    <ul class="nav-links">
+      <li><a href="#showcase">Our Work</a></li>
+      <li><a href="admin.html" class="admin-link">Admin Panel</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="animate-up">Discover <br><span class="gradient-text">Premium Digital Experiences</span></h1>
+      <p class="subtitle animate-up delay-1">Explore our curated collection of stunning, high-performance websites built
+        for the modern edge.</p>
+      <a href="#showcase" class="cta-btn animate-up delay-2">View Showcase <span>&rarr;</span></a>
+    </div>
+  </header>
+
+  <!-- Showcase Grid Section -->
+  <section id="showcase" class="showcase-section">
+    <div class="section-title">
+      <h2>Featured <span class="neon-text">Projects</span></h2>
+      <p>Click any card to visit the live site.</p>
+    </div>
+
+    <div class="grid-container" id="showcase-grid">
+      <!-- Cards will be injected here dynamically via script.js -->
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content glass-footer">
+      <div class="logo">Showcase<span class="neon-text">.AI</span></div>
+      <p>&copy; 2026 TANSOFT LABS. All rights reserved.</p>
+      <div class="socials">
+        <a href="#">Twitter</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include Data & Logic -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
